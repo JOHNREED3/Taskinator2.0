@@ -229,8 +229,6 @@ var loadTasks = function () {
 	if (!savedTasks) {
 		return false;
 	}
-	console.log("Saved tasks found!");
-	// else, load up saved tasks
 
 	// parse into array of objects
 	savedTasks = JSON.parse(savedTasks);
@@ -241,14 +239,13 @@ var loadTasks = function () {
 		createTaskEl(savedTasks[i]);
 	}
 };
-
 // Create a new task
 formEl.addEventListener("submit", taskFormHandler);
 
 // for edit and delete buttons
 pageContentEl.addEventListener("click", taskButtonHandler);
 
-loadTasks();
-
 // for changing the status
 pageContentEl.addEventListener("change", taskStatusChangeHandler);
+
+loadTasks();
